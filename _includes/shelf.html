@@ -1,0 +1,17 @@
+<div class="shelf row">
+	<h2 class="heading col-12">{{ include.heading }}</h2>
+	{% if include.subheading != "" %}<h5 class="col-12 text-muted" style="margin: -1rem 0 1rem">{{ include.subheading }}</h5>{% endif %}
+	{% for content in include.content-list %}
+	<div class="content col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2">
+	    <a href="{{ content.item.href }}">
+		<div class="content-box {{ content.item.eng }} mr-4">
+			<svg viewBox="0 0 25 25" height="50" width="50">
+				<path fill="#fff" d="{{ content.item.path }}" />
+			</svg>
+		</div>
+		<p class="content-title">{{ content.item.logo }}</p>
+		<p class="content-text">{{ content.item.text }}</p>
+		</a>
+	</div>
+	{% endfor %}
+</div>

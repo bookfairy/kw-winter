@@ -1,0 +1,23 @@
+---
+layout: default
+title: 시각
+---
+<section class="col-12 col-sm-12 offset-md-1 col-md-10 offset-lg-1 col-lg-10">
+	<div class="shelf row">
+		<h2 class="heading col-12">눈이 즐거운 겨울나기</h2>
+		{% for post in site.posts %}
+		{% assign postYear = post.date | date: '%Y' %}
+		{% if postYear == "1910" %}
+		<div class="content col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2">
+		    <a href="{{ post.url }}">
+		    	<div class="product-frame">
+				<div class="content-box post-box mr-4" style="background-image: url('/images/{{post.title}}.jpg');"></div>
+				</div>
+				<p class="content-title">{{ post.title }}</p>
+				<p class="content-text"></p>
+			</a>
+		</div>
+	    {% endif %}
+		{% endfor %}
+	</div>
+</section>

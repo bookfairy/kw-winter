@@ -1,0 +1,83 @@
+---
+layout: default
+---
+
+<!--
+sight(시각): 1910
+hearing(청각): 1920
+taste(미각): 1930
+smell(후각): 1940
+touch(촉각): 1950
+
+일반: 01
+눈: 02
+비: 03
+해: 04
+-->
+
+<section class="col-12 col-sm-12 offset-md-1 col-md-10 offset-lg-1 col-lg-10">
+	{% include shelf.html heading="겨울에는 역시" subheading="" content-list=site.data.main.major %}
+	
+	<div class="shelf row">
+		<h2 class="heading col-12">눈 내리는 날 🌨️</h2>
+		<h5 class="col-12 text-muted" style="margin: -1rem 0 1rem">눈 내리는 날에만 즐길 수 있는 겨울나기</h5>
+		{% assign i = 0 %}
+		{% for post in site.posts %}
+		{% assign postMonth = post.date | date: '%b' %}
+		{% if postMonth == "Feb" and i < 12 %}
+		<div class="content col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2">
+		    <a href="{{ post.url }}">
+		    	<div class="product-frame">
+				<div class="content-box post-box mr-4" style="background-image: url('/images/{{post.title}}.jpg');"></div>
+				</div>
+				<p class="content-title">{{ post.title }}</p>
+				<p class="content-text"></p>
+			</a>
+		</div>
+		{% assign i = i | plus:1 %}
+	    {% endif %}
+		{% endfor %}
+	</div>
+	
+	<div class="shelf row">
+		<h2 class="heading col-12">비가 오는 날 🌧️</h2>
+		<h5 class="col-12 text-muted" style="margin: -1rem 0 1rem">축축하고 우울한 날에는 집에서 겨울나기</h5>
+		{% assign i = 0 %}
+		{% for post in site.posts %}
+		{% assign postMonth = post.date | date: '%b' %}
+		{% if postMonth == "Mar" and i < 12 %}
+		<div class="content col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2">
+		    <a href="{{ post.url }}">
+		    	<div class="product-frame">
+				<div class="content-box post-box mr-4" style="background-image: url('/images/{{post.title}}.jpg');"></div>
+				</div>
+				<p class="content-title">{{ post.title }}</p>
+				<p class="content-text"></p>
+			</a>
+		</div>
+		{% assign i = i | plus:1 %}
+	    {% endif %}
+		{% endfor %}
+	</div>
+	
+	<div class="shelf row">
+		<h2 class="heading col-12">해가 쨍쨍한 날 ⛅</h2>
+		<h5 class="col-12 text-muted" style="margin: -1rem 0 1rem">해가 밝은 오늘은 활기차게 겨울나기</h5>
+		{% assign i = 0 %}
+		{% for post in site.posts %}
+		{% assign postMonth = post.date | date: '%b' %}
+		{% if postMonth == "Apr" and i < 12 %}
+		<div class="content col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2">
+		    <a href="{{ post.url }}">
+		    	<div class="product-frame">
+				<div class="content-box post-box mr-4" style="background-image: url('/images/{{post.title}}.jpg');"></div>
+				</div>
+				<p class="content-title">{{ post.title }}</p>
+				<p class="content-text"></p>
+			</a>
+		</div>
+		{% assign i = i | plus:1 %}
+	    {% endif %}
+		{% endfor %}
+	</div>
+</section>
